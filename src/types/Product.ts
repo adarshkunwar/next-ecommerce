@@ -1,3 +1,4 @@
+import { Treview } from "./Review";
 import { Category } from "./categories";
 
 export interface Product {
@@ -9,13 +10,6 @@ export interface Product {
     category : Category;
     image : string[];
     quanity : number;
-    reviews: [
-        {
-            id : string;
-            name : string;
-            review : string;
-            rating : number;
-        }
-    ]
+    reviews:   Treview[]; 
     
 }

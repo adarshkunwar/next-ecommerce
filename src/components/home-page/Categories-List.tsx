@@ -6,7 +6,7 @@ const CategoryList = () => {
     <div className="grid grid-cols-6 gap-5 pt-6">
       {(CategoryData as Category[]).map((category, index) => (
         <div>
-          <SingleCardItem category={category} />
+          <SingleCardItem category={category} key={index} />
         </div>
       ))}
     </div>

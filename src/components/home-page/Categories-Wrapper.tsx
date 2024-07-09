@@ -1,11 +1,12 @@
-import CategoryList from "./Categories-List"
+import CategoryList from "./Categories-List";
 
 const CategoriesWrapper = () => {
-	return (
-		<div>
-			<CategoryList />
-		</div>
-	)
-}
+  return (
+    <div>
+      <h2 className="text-2xl font-bold pt-6">Category</h2>
+      <CategoryList />
+    </div>
+  );
+};
 
-export default CategoriesWrapper
+export default CategoriesWrapper;
