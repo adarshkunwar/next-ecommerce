@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 
 export default function Navbar() {
 	return (
-		<nav className="flex justify-around items-center text-black py-4 border-b">
+		<nav className="flex justify-around items-center text-black py-4 border-b contanier">
 			<section className="text-3xl text-black">
 				Logo
 			</section>
