@@ -8,7 +8,10 @@ import { SingleCheckBox } from "./sidebar-item";
 
 const SideBarList = ({ heading, content }: SideBarListProps) => {
   return (
-    <AccordionItem value={heading}>
+    <AccordionItem
+      value={heading}
+      className="bg-gray-300 px-4 py-2 rounded-xl my-1"
+    >
       <AccordionTrigger>{heading}</AccordionTrigger>
       <AccordionContent>
         {(content as SideBarSingleItem[]).map((item, index) => {

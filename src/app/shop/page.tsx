@@ -5,8 +5,10 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="container bg-gray-100">
-        <SideBarWrapper />
+      <div className="container grid grid-cols-12">
+        <div className="col-span-3 border-r pr-1">
+          <SideBarWrapper />
+        </div>
       </div>
     </div>
   );
