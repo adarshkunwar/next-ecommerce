@@ -1,0 +1,44 @@
+[
+    {
+        "heading" : "Category",
+        "content": [
+            {
+                "isTrue": true,
+                "content": "All"
+            },
+            {
+                "isTrue": false,
+                "content": "Category 1"
+            },
+            {
+                "isTrue": false,
+                "content": "Category 2"
+            },
+            {
+                "isTrue": false,
+                "content": "Category 3"
+            }
+        ]
+    },
+    {
+        "heading" : "Price",
+        "content": [
+            {
+                "isTrue": true,
+                "content": "All"
+            },
+            {
+                "isTrue": false,
+                "content": "Less than $20"
+            },
+            {
+                "isTrue": false,
+                "content": "$20 - $100"
+            },
+            {
+                "isTrue": false,
+                "content": "More than $100"
+            }
+        ]
+    }
+]
