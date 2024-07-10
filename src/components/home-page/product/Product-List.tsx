@@ -11,7 +11,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-6 gap-5 pt-6">
+    <div className="grid grid-cols-4 gap-5 pt-6">
       {(data as Product[]).map((product, index) => (
         <div>
           <SingleCardItem product={product} key={index} />

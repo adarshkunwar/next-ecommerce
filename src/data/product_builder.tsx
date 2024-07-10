@@ -8,15 +8,48 @@ const randomImages = [
   "https://images.unsplash.com/photo-1719356441313-6cb150b99318?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
+const generateName = (syllablesCount: number) => {
+  const syllables = [
+    "pro",
+    "tech",
+    "auto",
+    "tron",
+    "gen",
+    "flex",
+    "nova",
+    "mega",
+    "prime",
+    "ultra",
+    "quant",
+    "sys",
+    "logic",
+    "cyber",
+    "dyn",
+    "max",
+    "core",
+    "lite",
+    "eco",
+    "neo",
+  ];
+
+  let name = "";
+  for (let i = 0; i < syllablesCount; i++) {
+    const randomIndex = Math.floor(Math.random() * syllables.length);
+    name += syllables[randomIndex] + " ";
+  }
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+  return name;
+};
 const generate_data = (Num: number) => {
   let jsonArray: Product[] = [];
 
   for (let i = 0; i < Num; i++) {
     let temp: Product = {
       id: i.toString(),
-      name: randomName[Math.floor(Math.random() * randomName.length)],
+      name: generateName(50),
       description: "description",
       discount: Math.floor(Math.random() * 10),
+      unit: "Rs.",
       price: parseInt(
         randomPrice[Math.floor(Math.random() * randomPrice.length)]
       ),
