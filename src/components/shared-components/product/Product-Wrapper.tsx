@@ -1,10 +1,14 @@
 import ProductList from "./Product-List";
 
-const ProdctWrapper = () => {
+type props = {
+  size: number
+}
+
+const ProdctWrapper = ({ size }: props) => {
   return (
     <div>
       <h2 className="text-2xl font-bold pt-6">Products</h2>
-      <ProductList />
+      <ProductList size={size} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import Layout from "@/components/shared-components/Layout";
 import Navbar from "@/components/shared-components/navbar";
-import ProdctWrapper from "@/components/shop-page/product/Product-Wrapper";
+import ProdctWrapper from "@/components/shared-components/product/Product-Wrapper";
 import SideBarWrapper from "@/components/shop-page/sidebar/sidebar-wrapper";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
             <SideBarWrapper />
           </div>
           <div className="col-span-9 border-r pr-1">
-            <ProdctWrapper />
+            <ProdctWrapper size={3} />
           </div>
         </div>
       </div>
