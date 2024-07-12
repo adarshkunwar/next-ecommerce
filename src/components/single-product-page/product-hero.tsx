@@ -4,8 +4,6 @@ import { getDiscountedPrice } from "@/utils/getDiscrounted";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
-import { FaStarHalf, FaStar, FaPlus, FaMinus } from "react-icons/fa";
-import { Input } from "../ui/input";
 import RatingStars from "../shared-components/RatingStars";
 import QuantityInput from "./quantity-input";
 
@@ -20,27 +18,14 @@ const ProductHero = ({ product }: Props) => {
     setPrimaryImage(i);
   };
 
-  const renderStars = () => {
-    let stars = [];
-    let tempStars = product.stars;
-    while (tempStars > 1) {
-      stars.push(<FaStar />);
-      tempStars--;
-    }
-    if (tempStars > 0) {
-      stars.push(<FaStarHalf />);
-    }
-    return stars;
-  };
-
   const discountedPrice = getDiscountedPrice(product.price, product.discount);
 
   return (
-    <div className="grid grid-cols-5 container gap-3">
+    <div className="grid grid-cols-5 gap-3">
       <section className="col-span-2">
         <figure>
           <div>
-            <div className="flex aspect-video items-center justify-center p-2 w-full h-full">
+            <div className="flex aspect-video items-center justify-center w-full h-full">
               <Image
                 width={0}
                 height={0}

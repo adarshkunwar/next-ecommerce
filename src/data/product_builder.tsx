@@ -1,4 +1,5 @@
 import { Product } from "@/types/Product";
+import { Treview } from "@/types/Review";
 
 const randomName = ["num1", "num2", "Num3", "num4"];
 const randomPrice = ["10", "20", "40", "20"];
@@ -59,7 +60,7 @@ const generate_data = (Num: number) => {
       id: i.toString(),
       name: generateName(25),
       stars: Math.random() * 5,
-      description: "description",
+      description: generateName(500),
       discount: Math.floor(Math.random() * 10),
       unit: "Rs.",
       price: parseInt(
@@ -73,6 +74,30 @@ const generate_data = (Num: number) => {
       image: generateImages(Math.floor(Math.random() * 5 + 1)),
       quanity: Math.floor(Math.random() * 10),
       reviews: [
+        {
+          id: "1",
+          name: "name",
+          review: "review",
+          rating: Math.floor(Math.random() * 5),
+        },
+        {
+          id: "1",
+          name: "name",
+          review: "review",
+          rating: Math.floor(Math.random() * 5),
+        },
+        {
+          id: "1",
+          name: "name",
+          review: "review",
+          rating: Math.floor(Math.random() * 5),
+        },
+        {
+          id: "1",
+          name: "name",
+          review: "review",
+          rating: Math.floor(Math.random() * 5),
+        },
         {
           id: "1",
           name: "name",

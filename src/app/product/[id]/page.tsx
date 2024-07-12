@@ -4,6 +4,9 @@ import React from "react";
 import NotFound from "./not-found";
 import { Product } from "@/types/Product";
 import ProductHero from "@/components/single-product-page/product-hero";
+import ProductDescription from "@/components/single-product-page/product-description";
+import ProductReviews from "@/components/single-product-page/product-reviews";
+import SimilarPRoduct from "@/components/shared-components/similar-product";
 
 type Props = {
   params: {
@@ -20,8 +23,11 @@ const SingleProductPage = ({ params: { id } }: Props) => {
   if (product === undefined) return NotFound();
   return (
     <Layout>
-      <div className="mt-10">
+      <div className="mt-10 container">
         <ProductHero product={product} />
+        <ProductDescription product={product} />
+        <ProductReviews product={product} />
+        <SimilarPRoduct />
       </div>
     </Layout>
   );
