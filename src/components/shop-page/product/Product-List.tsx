@@ -1,13 +1,13 @@
 "use client";
 import { Product } from "@/types/Product";
-import { generate_data } from "@/data/product_builder";
+import { generate_data } from "@/data/product_builder"
 import SingleCardItem from "./product-card-item";
 import { useEffect, useState } from "react";
 const ProductList = () => {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
-    setData(generate_data(200));
+    setData(generate_data(2));
   }, []);
 
   return (

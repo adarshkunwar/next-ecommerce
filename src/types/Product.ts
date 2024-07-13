@@ -11,6 +11,6 @@ export interface Product {
   price: number;
   category: Category;
   image: string[];
-  quanity: number;
+  quantity: number;
   reviews: Treview[];
 }

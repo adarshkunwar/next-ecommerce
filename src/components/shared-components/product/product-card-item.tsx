@@ -7,6 +7,7 @@ import Link from "next/link";
 type Props = {
   product: Product;
 };
+
 export default function SingleCardItem({ product }: Props) {
   const discountPrice = getDiscountedPrice(product.price, product.discount);
   return (
@@ -30,12 +31,12 @@ export default function SingleCardItem({ product }: Props) {
         <CardContent>
           <h3 className="text-md line-clamp-2">{product.name}</h3>
           <h3 className="font-bold">
-            {product.unit}
+            {product.unit}&nbsp;
             {discountPrice}
           </h3>
           <div className="flex gap-1">
             <del className="text-sm text-muted-foreground">
-              {product.unit}
+              {product.unit}&nbsp;
               {product.price}
             </del>
             <div className="text-sm "> -{product.discount}%</div>

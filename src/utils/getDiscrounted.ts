@@ -1,3 +1,3 @@
 export function getDiscountedPrice(price: number, discount: number) {
-  return (price - price * (discount / 100)).toFixed(2);
+  return (price - price * (discount / 100)).toFixed(3);
 }

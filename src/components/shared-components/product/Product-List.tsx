@@ -12,7 +12,7 @@ const ProductList = ({ size }: props) => {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
-    setData(generate_data(20));
+    setData(generate_data(2));
   }, []);
 
   return (
