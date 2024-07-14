@@ -59,7 +59,7 @@ const generate_data = (num: number): Product[] => {
       "reviews": generate_review(generateRandomNumber(1, 10)),
       "discount": Math.floor(generateRandomNumber(5, 70)),
       "description": CHOSEN_DESC,
-      "category": CategoryData[generateRandomNumber(1, CategoryData.length)]
+      "category": CategoryData[Math.floor(generateRandomNumber(1, CategoryData.length))]
     };
     result.push(temp);
   }
