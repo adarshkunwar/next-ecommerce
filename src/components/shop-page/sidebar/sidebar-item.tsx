@@ -3,27 +3,38 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { SideBarSingleItem } from "@/types/sidebar";
 import { useParams, usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
+
 
 export const CHOSEN_CATEGORY = "category"
-
 export function SingleCheckBox({ isTrue, content }: SideBarSingleItem) {
-  const router = useRouter()
+  const router = useRouter();
+  const pathName = usePathname()
   const searchParams = useSearchParams()
-  const pathname = usePathname()
-  const chosenCategory = Number(searchParams.get(CHOSEN_CATEGORY ?? 'all'))
+  const chosenCategory = searchParams.get(CHOSEN_CATEGORY ?? 'all')
 
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
 
-  const [isTrueS, setIsTrueS] = useState(isTrue);
+      return params.toString();
+    },
+    [searchParams]
+  );
+
+  const isChosen = (chosenCategory === content ? true : false);
 
   const handleCheck = () => {
-    setIsTrueS(!isTrueS);
+    router.push(
+      pathName + "?" + createQueryString(CHOSEN_CATEGORY, content.toString())
+    );
   };
 
   return (
     <div className="flex items-center space-x-2">
-      <Checkbox id="terms" checked={isTrueS} onClick={handleCheck} />
+      <Checkbox id="terms" checked={isChosen} onClick={handleCheck} />
       <label
         htmlFor="terms"
         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
