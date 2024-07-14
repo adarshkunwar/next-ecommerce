@@ -17,7 +17,7 @@ const SideBarList = ({ heading, content }: SideBarListProps) => {
         {(content as SideBarSingleItem[]).map((item, index) => {
           return (
             <div key={index} className="my-1">
-              <SingleCheckBox isTrue={item.isTrue} content={item.content} />
+              <SingleCheckBox heading={heading} isTrue={item.isTrue} content={item.content} />
             </div>
           );
         })}

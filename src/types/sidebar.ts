@@ -1,6 +1,7 @@
 export type SideBarSingleItem = {
     isTrue: boolean;
     content: string;
+    heading: string;
 };
 
 export type SideBarListProps = {

@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
 
-export const CHOSEN_CATEGORY = "category"
-export function SingleCheckBox({ isTrue, content }: SideBarSingleItem) {
+export function SingleCheckBox({ isTrue, content, heading }: SideBarSingleItem) {
+  const CHOSEN_CATEGORY = heading;
   const router = useRouter();
   const pathName = usePathname()
   const searchParams = useSearchParams()
