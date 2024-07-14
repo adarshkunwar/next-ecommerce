@@ -26,26 +26,22 @@ const ProductList = ({ size, length, variant }: props) => {
 
   useEffect(() => {
     setData(generate_data(length));
-    if (chosenCategory) {
-      setFilteredData(data.filter(data => data.category.name == chosenCategory))
-    } else {
-      setFilteredData(data)
-    }
+    setFilteredData(data)
   }, [])
-
   useEffect(() => {
     if (chosenCategory) {
       setFilteredData(data.filter(data => data.category.name == chosenCategory))
     } else {
       setFilteredData(data)
     }
-  }, [searchParams, data, chosenCategory]);
+  }, [searchParams]);
 
   return (
     <div className={`grid ${size === 4 ? `grid-cols-4` : `grid-cols-3`} gap-5 pt-6`}>
       {variant === 'filtered' ?
         (filteredData as Product[]).map((product, index) => (
           <div >
+            hi
             <SingleCardItem product={product} key={index} variant="category" />
           </div>
         ))

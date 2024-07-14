@@ -17,7 +17,7 @@ const Category = ({ product }: Props) => {
       <Link href={`/product/${product.id}`}>
         <Card className="rounded-lg overflow-hidden hover:shadow-lg transition-all">
           <CardHeader>
-            <div className="rounded-sm aspect-video overflow-hidden w-full bg-red-300">
+            <div className="rounded-sm aspect-video overflow-hidden w-full bg-red-300 relative">
               <Image
                 width={0}
                 height={0}
@@ -29,11 +29,13 @@ const Category = ({ product }: Props) => {
               <figcaption className="text-sm text-gray-400">
                 {product.name}
               </figcaption>
+              <div className="absolute right-1 top-1">
+                <h3 className="text-sm text-black bg-gray-300 w-fit px-1 rounded-md ">{product.category?.name}</h3>
+              </div>
             </div>
           </CardHeader>
           <CardContent>
             <h3 className="text-md line-clamp-2">{product.name}</h3>
-            <h3 className="text-sm text-white bg-black w-fit px-1 rounded-md">{product.category?.name}</h3>
             <h3 className="font-bold">
               {product.unit}&nbsp;
               {discountPrice}
@@ -92,6 +94,8 @@ const Default = ({ product }: Props) => {
   )
 }
 export default function SingleCardItem({ product, variant }: Props) {
-  return <Category product={product} />
+  return variant === 'category' ?
+    <Category product={product} /> :
+    <Default product={product} />
 }
 
