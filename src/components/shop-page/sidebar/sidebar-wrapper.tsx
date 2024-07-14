@@ -1,5 +1,5 @@
-import { SideBarAccordian } from "./sidebar-accordian";
-import SideBarData from "@/data/sidebar.json";
+import { SideBarAccordion } from "./sidebar-accordion";
+import SideBarData from "@/data/sidebar";
 
 const SideBarWrapper = () => {
   return (
@@ -9,7 +9,7 @@ const SideBarWrapper = () => {
         <div>Clear Filter</div>
       </div>
       <div>
-        <SideBarAccordian content={SideBarData} />
+        <SideBarAccordion content={SideBarData} />
       </div>
     </div>
   );

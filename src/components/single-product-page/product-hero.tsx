@@ -12,7 +12,7 @@ type Props = {
 };
 
 const ProductHero = ({ product }: Props) => {
-  const [primaryImage, setPrimaryImage] = useState(1);
+  const [primaryImage, setPrimaryImage] = useState(0);
 
   const changeImage = (i: number) => {
     setPrimaryImage(i);

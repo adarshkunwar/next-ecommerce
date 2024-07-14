@@ -7,7 +7,7 @@ const SimilarPRoduct = (props: Props) => {
   return (
     <div>
       <h2>You may also like</h2>
-      <ProductList size={4} />
+      <ProductList size={4} length={4} />
     </div>
   );
 };

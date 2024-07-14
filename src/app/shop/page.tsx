@@ -12,7 +12,7 @@ const Home = () => {
             <SideBarWrapper />
           </div>
           <div className="col-span-9 border-r pr-1">
-            <ProdctWrapper size={3} />
+            <ProdctWrapper size={3} length={10} />
           </div>
         </div>
       </div>

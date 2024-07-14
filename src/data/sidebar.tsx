@@ -1,10 +1,31 @@
-[
+import category from "@/data/categories.json"
+
+
+interface dataCategory {
+    content: string,
+    isTrue: boolean
+}
+
+type sidebardata = {
+    heading: string;
+    content: { isTrue: boolean, content: string }[]
+}
+
+const dataCategory: dataCategory[] = category.map(cat => ({
+    ...cat,
+    content: cat.name,
+    isTrue: false
+}))
+
+
+
+const data: sidebardata[] = [
     {
-        "heading" : "Category",
-        "content": 
+        "heading": "Category",
+        "content": dataCategory
     },
     {
-        "heading" : "Price",
+        "heading": "Price",
         "content": [
             {
                 "isTrue": true,
@@ -25,7 +46,7 @@
         ]
     },
     {
-        "heading" : "Rating",
+        "heading": "Rating",
         "content": [
             {
                 "isTrue": true,
@@ -50,7 +71,7 @@
         ]
     },
     {
-        "heading" : "Brand",
+        "heading": "Brand",
         "content": [
             {
                 "isTrue": true,
@@ -71,3 +92,5 @@
         ]
     }
 ]
+
+export default data

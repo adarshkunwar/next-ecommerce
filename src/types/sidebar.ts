@@ -1,5 +1,5 @@
-export type SideBarSingleItem  = {
-    isTrue : boolean;
+export type SideBarSingleItem = {
+    isTrue: boolean;
     content: string;
 };
 
@@ -8,6 +8,6 @@ export type SideBarListProps = {
     content: SideBarSingleItem[];
 };
 
-export type SideBarAccordianProps = {
+export type SideBarAccordionProps = {
     content: SideBarListProps[];
 };

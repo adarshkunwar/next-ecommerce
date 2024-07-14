@@ -6,13 +6,14 @@ import { useEffect, useState } from "react";
 
 type props = {
   size: number
+  length: number,
 }
 
-const ProductList = ({ size }: props) => {
+const ProductList = ({ size, length }: props) => {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
-    setData(generate_data(2));
+    setData(generate_data(length));
   }, []);
 
   return (
