@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { Button } from "../ui/button";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -13,10 +13,11 @@ const MAX_QUANTITY = 10;
 const MIN_QUANTITY = 1;
 
 const QuantityInput = (props: Props) => {
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathName = usePathname();
-  const passedQuantity = Number(searchParams.get(SELECTED_QUANTITY) ?? 1);
+  const passedQuantity = Number(searchParams.get(SELECTED_QUANTITY) ?? DEFAULT_QUANTITY);
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -29,14 +30,14 @@ const QuantityInput = (props: Props) => {
   );
 
   const controlQuantity = (value: number) => {
-    if (value > MAX_QUANTITY) {
-      return MAX_QUANTITY;
-    }
-    if (value < MIN_QUANTITY) {
-      return MIN_QUANTITY;
-    }
-    return value;
-  };
+    return Math.max(MIN_QUANTITY, Math.min(MAX_QUANTITY, value));
+  }
+
+  useEffect(() => {
+    router.push(
+      pathName + "?" + createQueryString(SELECTED_QUANTITY, controlQuantity(passedQuantity).toString())
+    )
+  }, [createQueryString, pathName, router, passedQuantity])
 
   const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const data = controlQuantity(e.target.valueAsNumber);
@@ -56,7 +57,7 @@ const QuantityInput = (props: Props) => {
     <section className="flex gap-2">
       <Button
         variant={"default"}
-        onClick={() => handleButtonPress(passedQuantity + 1)}
+        onClick={() => handleButtonPress(passedQuantity - 1)}
       >
         <FaMinus />
       </Button>

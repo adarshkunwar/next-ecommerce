@@ -52,9 +52,9 @@ const CartItemTable = (props: Props) => {
                   </div>
                 </TableCell>
                 <TableCell>{product.price}</TableCell>
-                <TableCell>{product.quanity}</TableCell>
+                <TableCell>{product.quantity}</TableCell>
                 <TableCell className="text-right">
-                  {product.price * product.quanity}
+                  {product.price * product.quantity}
                 </TableCell>
               </TableRow>
             );

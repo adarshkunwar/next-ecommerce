@@ -45,15 +45,11 @@ const ProductList = ({ size, length, variant }: props) => {
     <div className={`grid ${size === 4 ? `grid-cols-4` : `grid-cols-3`} gap-5 pt-6`}>
       {variant === 'filtered' ?
         (filteredData as Product[]).map((product, index) => (
-          <div >
-            <SingleCardItem product={product} key={index} variant="category" />
-          </div>
+          <SingleCardItem product={product} key={index} variant="category" />
         ))
         :
         (data as Product[]).map((product, index) => (
-          <div>
-            <SingleCardItem product={product} key={index} />
-          </div>
+          <SingleCardItem product={product} key={index} />
         ))
       }
     </div>

@@ -25,8 +25,10 @@ export default function Navbar() {
         </section>
         <section className="flex gap-2">
           <Button> Login </Button>
-          <Button variant={"outline"}>
-            <CiShoppingCart size={24} />{" "}
+          <Button variant={"outline"} asChild>
+            <Link href={'/customer/cart'} >
+              <CiShoppingCart size={24} />{" "}
+            </Link>
           </Button>
         </section>
       </section>

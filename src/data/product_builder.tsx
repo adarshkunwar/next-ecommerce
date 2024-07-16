@@ -55,7 +55,7 @@ const generate_data = (num: number): Product[] => {
       "image": generateRandomImages(Math.floor(generateRandomNumber(1, 4))),
       "price": Math.floor(generateRandomNumber(500, 1000)),
       "stars": generateRandomNumber(1, 5),
-      "quantity": generateRandomNumber(1, 20),
+      "quantity": Math.floor(generateRandomNumber(1, 20)),
       "reviews": generate_review(generateRandomNumber(1, 10)),
       "discount": Math.floor(generateRandomNumber(5, 70)),
       "description": CHOSEN_DESC,

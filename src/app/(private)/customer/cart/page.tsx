@@ -1,4 +1,6 @@
 import CartItemTable from "@/components/cart/cart-item-table";
+import Layout from "@/components/shared-components/Layout";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import React from "react";
 
@@ -6,22 +8,24 @@ type Props = {};
 
 const Cart = (props: Props) => {
   return (
-    <div className="container mx-auto py-10 ">
-      <header className="flex flex-col justify-end items-center">
-        <h1 className="text-3xl font-semibold justify-center">Cart</h1>
-        <h1 className="text-lg font-semibold justify-center text-muted-foreground">
-          A list for all your cart items
-        </h1>
-      </header>
-      <div className="grid grid-cols-3 mt-4 gap-10">
-        <section className="col-span-2">
-          <CartItemTable />
-        </section>
-        <section>
-          <OrderSummary />
-        </section>
+    <Layout>
+      <div className="container mx-auto py-10 ">
+        <header className="flex flex-col justify-end items-center">
+          <h1 className="text-3xl font-semibold justify-center">Cart</h1>
+          <h1 className="text-lg font-semibold justify-center text-muted-foreground">
+            A list for all your cart items
+          </h1>
+        </header>
+        <div className="grid grid-cols-3 mt-4 gap-10">
+          <section className="col-span-2">
+            <CartItemTable />
+          </section>
+          <section>
+            <OrderSummary />
+          </section>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
@@ -49,6 +53,7 @@ const OrderSummary = () => {
           <p>Total</p>
           <p>$285.00</p>
         </div>
+        <Button className="uppercase mt-4 w-full"> Proceed to checkout </Button>
       </CardContent>
     </Card>
   );

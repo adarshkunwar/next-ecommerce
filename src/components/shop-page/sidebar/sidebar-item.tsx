@@ -28,7 +28,7 @@ export function SingleCheckBox({ isTrue, content, heading }: SideBarSingleItem) 
 
   const handleCheck = () => {
     router.push(
-      pathName + "?" + createQueryString(CHOSEN_CATEGORY, content.toString())
+      pathName + "?" + createQueryString(CHOSEN_CATEGORY ?? 'all', content.toString())
     );
   };
 
