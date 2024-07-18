@@ -1,0 +1,18 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres
+    restart: always
+    container_name: ecommerce-postgres
+    ports:
+      - 5433:5432
+    env_file:
+      - .env.local
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
